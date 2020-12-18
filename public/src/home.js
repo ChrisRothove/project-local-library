@@ -1,8 +1,17 @@
-function totalBooksCount(books) {}
+function totalBooksCount(books) {
+  return books.length;
+}
 
-function totalAccountsCount(accounts) {}
+function totalAccountsCount(accounts) {
+  return accounts.length;
+}
 
-function booksBorrowedCount(books) {}
+function booksBorrowedCount(books) {
+  return books.reduce((book) => {
+    if (!book.borrows[0].returned) acc += 1;
+    return acc;
+  }, 0);
+}
 
 function getMostCommonGenres(books) {}
 
