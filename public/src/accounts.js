@@ -18,22 +18,17 @@ function numberOfBorrows({id}, books) {
   return booksBorrowed;
 }
 
-//a helper function to format entries in the possessed books function (line 26)
-function bookAndAuthorObject({ id, title, genre, authorId, borrows }, author) {
-return { id, title, genre, authorId, author, borrows };
-}
 
 function getBooksPossessedByAccount({ id }, books, authors) {
   //create variable for all owned books by filtering through each book's borrows
-  const ownedBooks = books.filter((book) => {
-    !book.borrows[0].returned && book.borrows[0].id === id
-  });
+  const ownedBooks = books.filter((book) => 
+    !book.borrows[0].returned && book.borrows[0].id === id)
+  console.log(ownedBooks)
   const bookList = [];
   //for each book, find matching author and generate new array.
   ownedBooks.forEach((book) => {
-    const matchingAuthor = authors.find((author) => {
-    author.id === book.borrows[0].id
-  })
+    const matchingAuthor = authors
+    .find((author) => author.id === book.authorId)
   //deconstruct book
   const { id, title, genre, authorId, borrows } = book;
   bookList.push({id, title, genre, authorId, author: matchingAuthor, borrows})
