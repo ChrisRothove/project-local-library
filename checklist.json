@@ -1,0 +1,17 @@
+{
+    "all tests Passed": "True",
+    "no single-letter variables": "true",
+    "atleast 1 Arrow Function": "true (src/accounts, line 2)",
+    "atleast one of each function...": {
+        "find": "true (src/accounts, line 31)",
+        "filter": "true (src/books, line 14",
+        "map": "true (src/home, line 25",
+        "reduce": "true (src/home, line 55)",
+    },
+    "includes a helper function": "topFive function (src/home, line 16)",
+    "includes atleast two of the following" {
+        "ternary operator": "(src/home, line 17)",
+        "object shorthand": "(src/accounts, line 34)",
+        "destructuring": "(src/accounts, line 33)"
+    }
+}
